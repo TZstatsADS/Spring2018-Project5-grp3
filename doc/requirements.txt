@@ -1,0 +1,11 @@
+pandas==0.20.3
+dash_html_components==0.10.0
+requests==2.18.4
+dash_core_components==0.21.0rc1
+numpy==1.14.2
+six==1.11.0
+dash==0.21.0
+scipy==1.0.1
+tensorflow==1.7.0
+Pillow==5.1.0
+scikit_learn==0.19.1
