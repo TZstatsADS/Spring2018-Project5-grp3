@@ -27,11 +27,11 @@ Three ways of importing of the test image. We manage to upload one's photo throu
 ***<p align="center">The Cover of our Web page</p>***
   ![image](figs/cover.jpg)
   
-***Similarity for Leehom Wang***
+***<p align="center">Similarity for Leehom Wang</p>***
   ![image](figs/Similarity.jpg)
   
   
- ***Attributes for Leehom Wang***
+ ***<p align="center">Attributes for Leehom Wang</p>***
   ![image](figs/attribute.jpg)
   
 
