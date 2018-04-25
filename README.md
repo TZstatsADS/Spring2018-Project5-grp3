@@ -33,11 +33,11 @@ Three ways of importing of the test image. We manage to upload one's photo throu
   ![image](figs/cover.jpg)<br>
   
 ***<p align="center">Similarity for Leehom Wang</p>***
-  ![image](figs/Similarity.png)<br>
+  ![image](figs/m-simi.png)<br>
   
   
  ***<p align="center">Attributes for Leehom Wang</p>***
-  ![image](figs/attribute.png)<br>
+  ![image](figs/m-att.png)<br>
   
 
 	
