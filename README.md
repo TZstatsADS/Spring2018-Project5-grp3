@@ -44,7 +44,7 @@ Three ways of importing of the test image. We manage to upload one's photo throu
 	
 **Contribution statement**: ([default](doc/a_note_on_contributions.md)) 
 
-- Guo, Du: 
+- Guo, Du: Using models trained by Tao Guo to make predictions. Constructed Attributes dash page to show the results of our predictions, and combined codes of other members. 
 - Guo, Tao: Training part of the image for feature extracture. Building and training the Logistic Model for gender, attractiveness and face shape. Summary and Presentation with Yiran Jiang.
 - Jiang, Yiran:  
 - Liu, Fangbing: Designed python dash page, helped with processing data and organizing code.
