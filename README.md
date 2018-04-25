@@ -24,14 +24,14 @@ Utilizing Tensorflow as  a pre-trained model to extract feature of over twenty t
  
 Three ways of importing of the test image. We manage to upload one's photo through the local file,  sourcing the image through the url address one the Internet and also implement the counnection with your own camera. So that you can take a photo immediately and do the following matching and analysis. After we get the test image, we manage to find the imag of the celebrity that you resemble the most, giving the similarity rate from tab1. While from tab2 we get some attributes of the image of yourself, such as your gender likelihood, your attractiveness as well as the thiness of one's face.
 
-***The Cover of our Web page***
+***<p align="center">The Cover of our Web page</p>***
   ![image](figs/cover.jpg)
   
-***Similarity for Leehom Wang***
+***<p align="center">Similarity for Leehom Wang</p>***
   ![image](figs/Similarity.jpg)
   
   
- ***Attributes for Leehom Wang***
+ ***<p align="center">Attributes for Leehom Wang</p>***
   ![image](figs/attribute.jpg)
   
 
