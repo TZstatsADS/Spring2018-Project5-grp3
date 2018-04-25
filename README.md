@@ -31,7 +31,7 @@ This application with a user friendly interface can be used by people without mu
 Three ways of importing of the test image. We manage to upload one's photo through the local file,  sourcing the image through the url address one the Internet and also implement the counnection with your own camera. So that you can take a photo immediately and do the following matching and analysis. After we get the test image, we manage to find the imag of the celebrity that you resemble the most, giving the similarity rate from tab1. While from tab2 we get some attributes of the image of yourself, such as your sex likelihood, your attractiveness as well as the thiness of one's face.
 <br>
 
-**Note: You need to download our NPY file feature.npy(https://www.dropbox.com/s/b5gewfwv0478gcn/feature.npy?dl=0) as well as the CelebA dataset(https://www.dropbox.com/sh/8oqt9vytwxb3s4r/AAB06FXaQRUNtjW9ntaoPGvCa?dl=0) and put them under /data, **
+**Note: You need to download our NPY file feature.npy(https://www.dropbox.com/s/b5gewfwv0478gcn/feature.npy?dl=0) as well as the CelebA dataset(https://www.dropbox.com/sh/8oqt9vytwxb3s4r/AAB06FXaQRUNtjW9ntaoPGvCa?dl=0) and put them under /data.**
 
 ***<p align="center">The Cover of our Web page</p>***
   ![image](figs/cover.jpg)<br>
