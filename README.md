@@ -4,6 +4,7 @@ Term: Spring 2018
 
 + Team #3
 + Projec title: "FACELOOK" - A Python Dash Face Recognition Web App
++ Link: https://prezi.com/qdc1ljheqp93/
 + Team members
 
    - Guo, Du <dg2999@columbia.edu>
