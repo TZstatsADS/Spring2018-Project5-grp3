@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
-
 import base64
 import datetime
 import io
@@ -10,7 +5,9 @@ import datetime
 import cv2
 import pandas as pd
 import numpy as np
+import inspect
 import os
+import os.path
 import dash
 import tensorflow as tf
 import facenet2
@@ -40,11 +37,14 @@ this_string2 = ''
 this_string3 = ''
 this_string4 = ''
 
-setwd = "/Users/duguo/Documents/coursesbook/applied_DS/project5/project5_final/"
+
+setwd = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))+'/'
+prewd = os.path.abspath(os.path.join(setwd, os.pardir))
+
 def test_sex_pred(test_sex_pred_global):
     if test_sex_pred_global == 1:
         sex_part = html.Div([
-                html.Img(src=findsrc2(setwd + "test_picture/man.png"), style={ 'display': 'block',
+                html.Img(src=findsrc2(prewd+"/data/image/man.png"), style={ 'display': 'block',
                                         'marginLeft': 'auto', 
                                         'marginRight': 'auto'}),
                 html.H2(children = 'man : ' + str(format(round(loaded_model_sex.predict_proba(test)[0][1],2), '.0%')),style={
@@ -57,7 +57,7 @@ def test_sex_pred(test_sex_pred_global):
 
     if test_sex_pred_global == -1:
         sex_part = html.Div([
-                html.Img(src=findsrc2(setwd + "test_picture/woman.png"), style={ 'display': 'block',
+                html.Img(src=findsrc2(prewd+"/data/image/woman.png"), style={ 'display': 'block',
                                         'marginLeft': 'auto', 
                                         'marginRight': 'auto'}),
                 html.H2(children = 'woman : ' + str(format(round(loaded_model_sex.predict_proba(test)[0][0],2), '.0%')),style={
@@ -71,7 +71,7 @@ def test_sex_pred(test_sex_pred_global):
 def test_chubby_pred(test_chubby_pred_global):
     if test_chubby_pred_global == 1:
         chubby_part = html.Div([
-                html.Img(src=findsrc2(setwd + "test_picture/fat.jpeg"), style={ 'display': 'block',
+                html.Img(src=findsrc2(prewd+"/data/image/fat.jpeg"), style={ 'display': 'block',
                                         'marginLeft': 'auto', 
                                         'marginRight': 'auto'}),
                 html.H2(children = 'chubby : ' + str(format(round(loaded_model_chubby.predict_proba(test)[0][1],2), '.0%')),style={
@@ -83,7 +83,7 @@ def test_chubby_pred(test_chubby_pred_global):
         return chubby_part
     if test_chubby_pred_global == -1:
         chubby_part = html.Div([
-                html.Img(src=findsrc2(setwd + "test_picture/thin.jpeg"), style={ 'display': 'block',
+                html.Img(src=findsrc2(prewd+"/data/image/thin.jpeg"), style={ 'display': 'block',
                                         'marginLeft': 'auto', 
                                         'marginRight': 'auto'}),
                 html.H2(children = 'thin : ' + str(format(round(loaded_model_chubby.predict_proba(test)[0][0],2), '.0%')),style={
@@ -96,7 +96,7 @@ def test_chubby_pred(test_chubby_pred_global):
     
 def test_attr_pred(test_attr_pred_global):
         attr_part = html.Div([
-                html.Img(src=findsrc2(setwd + "test_picture/attractive.jpeg"), style={ 'width': '225px',
+                html.Img(src=findsrc2(prewd+"/data/image/attractive.jpeg"), style={ 'width': '225px',
                                          'height': '225px',
                                          'display': 'block',
                                          'marginLeft': 'auto', 
@@ -111,7 +111,7 @@ def test_attr_pred(test_attr_pred_global):
 
 def face_detector(image):
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    faceCascade = cv2.CascadeClassifier(setwd + "haarcascade_frontalface_default.xml")
+    faceCascade = cv2.CascadeClassifier(prewd+"/lib/haarcascade_frontalface_default.xml")
     faces = faceCascade.detectMultiScale(
     gray,
     scaleFactor=1.1,
@@ -142,7 +142,7 @@ def face_detector(image):
         img = misc.imread('resized.jpg')
         images = np.zeros((1, 160, 160,3))
         if img.ndim == 2:
-            img = to_rgb(img)
+            img = facenet2.to_rgb(img)
         if len(img[0][0]) == 4:
             img=img[:,:,0:3]
         img = facenet2.prewhiten(img)
@@ -163,14 +163,13 @@ def main(image):
     emb_array[0] = sess.run(embeddings, feed_dict=feed_dict)
     this = np.matrix.round(emb_array,4)
     this = pd.DataFrame(this)
-    this.to_csv(setwd + "test_dash.csv")
     return(this)
 
 def findsrc(this):
     if this == '':
         return None
     print(this)
-    image_filename = '/Users/duguo/Documents/coursesbook/applied_DS/project5/img_align_celeba/' + this # replace with your own image
+    image_filename = prewd +'/data/img_align_celeba/' + this # replace with your own image
     encoded_image = base64.b64encode(open(image_filename, 'rb').read())
     return('data:image/jpeg;base64,'+str(encoded_image)[2:-1])
 
@@ -365,7 +364,7 @@ def cal_Sim():
                                   
                                   html.Div([
                                             html.P(["        "],style={'display': 'inline-block', 'float':'left'}),
-                                            html.Div([html.Img(src=findsrc2(setwd + "/test_picture/question2.jpg"))],
+                                            html.Div([html.Img(src=findsrc2(prewd+"/data/image/question2.jpg"))],
                                                      style={
                                                      'width': '160px',
                                                      'height': '160px',
@@ -381,7 +380,7 @@ def cal_Sim():
                                             html.Hr(),
                                             
                                             html.Div([
-                                                      html.Img(src=findsrc2(setwd + "/test_picture/question2.jpg")),
+                                                      html.Img(src=findsrc2(prewd+"/data/image/question2.jpg")),
                                                       html.Hr(),
                                                       ],style={
                                                      'width': '160px',
@@ -406,7 +405,7 @@ def call_stat():
     if test[0][0] == 'N':
         Stat = html.Div([
                 html.Hr(),
-                html.Img(src=findsrc2(setwd + "/test_picture/question2.jpg"),
+                html.Img(src=findsrc2(prewd+"/data/image/question2.jpg"),
                      style={
                      'width': '160px',
                      'height': '160px',
@@ -554,7 +553,6 @@ app.layout = html.Div(style={'backgroundColor':colors['background']},
               [dash.dependencies.State('input-box', 'value')])
 
 def update_output(contents,n_clicks,pathname,push,value):
-    print("%%%%%%%%%")
     global click
     global click_cam #camera
     global corr1
@@ -606,7 +604,6 @@ def update_output(contents,n_clicks,pathname,push,value):
                 parse_contents(contents[0],True)
                 if pathname == '/' or pathname == '/Similarity':
                     new3 = pathname
-                    print("@@@@@@@@")
                     return cal_Sim()
                 elif pathname == '/Attributes':
                     new3 = pathname
@@ -620,7 +617,6 @@ def update_output(contents,n_clicks,pathname,push,value):
 
 
     if pathname == '/' or pathname == '/Similarity':
-        print("*****************")
         new3 = pathname
         return cal_Sim()
     elif pathname == '/Attributes':
@@ -645,11 +641,11 @@ if __name__ == '__main__':
     with tf.Graph().as_default():
         with tf.Session() as sess:
             print('Loading Data')
-            train = np.load(setwd + "feature.npy")
+            train = np.load(prewd+"/data/feature.npy")
             # Load the model
-            loaded_model_sex = pickle.load(open(setwd + "logistic_sex.pkl", 'rb'))
-            loaded_model_chubby = pickle.load(open(setwd + "logistic_chubby.pkl", 'rb'))
-            loaded_model_attr = pickle.load(open(setwd + "logistic_attractive.pkl", 'rb'))            
+            loaded_model_sex = pickle.load(open(prewd+"/lib/logistic_sex.pkl", 'rb'))
+            loaded_model_chubby = pickle.load(open(prewd+"/lib/logistic_chubby.pkl", 'rb'))
+            loaded_model_attr = pickle.load(open(prewd+"/lib/logistic_attractive.pkl", 'rb'))
             print('Loading feature extraction model')
-            facenet2.load_model(setwd + "20180402-114759.pb")
+            facenet2.load_model(prewd+"/lib/20180402-114759.pb")
             app.run_server(debug=True,use_reloader=False)
