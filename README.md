@@ -18,7 +18,7 @@ The design and implemention of a python Dash Web Application based on Face Recog
 
 ### Technique Principle:
  
-Utilizing Tensorflow as  a pre-trained model to extract feature of over twenty thousand images as a matrix of  512 columns. Using cosine similarity for the image matching and the corresponding similarity. Using Logistics model to train and predict for gender, attractiveness and face shape (We also try the svm model, with the similar error rate as logistic. However, Logistic is faster and we obtain the probability for each class). Building the dash page application and implement all the function inside.
+Utilizing Tensorflow as a pre-trained model to extract feature of over twenty thousand images as a matrix of 512 columns and designing algorithm to handle the extraction of feature from new test image. Improving the face detect algorithm provided by OpenCV to better fit our data set. Using cosine similarity for the image matching and the corresponding similarity. Using Logistics model to train and predict for sex, attractiveness and face shape (We also try the SVM model, with the similar error rate as logistic. However, Logistic is faster and we obtain the estimated probability for each class). Building the dash page application and implement all the function inside.
 
 ***<p align="center">Error Rate for Logistic & SVM</p>***
   ![image](figs/table.png)<br>
