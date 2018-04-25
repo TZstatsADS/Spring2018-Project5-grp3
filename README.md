@@ -23,7 +23,7 @@ Utilizing Tensorflow as  a pre-trained model to extract feature of over twenty t
 ***<p align="center">Error Rate for Logistic & SVM</p>***
   ![image](figs/table.png)<br>
  
-### Application guideline:
+### Application Guideline:
 
 This application with a user friendly interface can be used by people without much learning steps. Simply click with the button. You can enjoy the wonderful experence with our application.<br>
 <br>
