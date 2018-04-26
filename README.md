@@ -19,7 +19,7 @@ The design and implemention of a python Dash Web Application based on Face Recog
 
 ### Technique Principle:
  
-Utilizing Tensorflow as a pre-trained model to extract feature of over twenty thousand images as a matrix of 512 columns and designing algorithm to handle the extraction of feature from new test image. Improving the face detect algorithm provided by OpenCV to better fit our data set. Using cosine similarity for the image matching and the corresponding similarity. Using Logistics model to train and predict for sex, attractiveness and face shape (We also try the SVM model, with the similar error rate as logistic. However, Logistic is faster and we obtain the estimated probability for each class). Building the dash page application, which start from scratch and implement all the function inside.
+Utilizing Tensorflow as a pre-trained model to extract feature of over two hundred thousand images as a matrix of 512 columns and designing algorithm to handle the extraction of feature from new test image. Improving the face detect algorithm provided by OpenCV to better fit our data set. Using cosine similarity for the image matching and the corresponding similarity. Using Logistics model to train and predict for sex, attractiveness and face shape (We also try the SVM model, with the similar error rate as logistic. However, Logistic is faster and we obtain the estimated probability for each class). Building the dash page application, which start from scratch and implement all the function inside.
 
 ***<p align="center">Error Rate for Logistic & SVM</p>***
   ![image](figs/table3.png)<br>
@@ -51,7 +51,7 @@ Three ways of importing of the test image. We manage to upload one's photo throu
 - Guo, Tao: Training part of the image for feature extracture. Building and training the Logistic Model for gender, attractiveness and face shape. Summary and Presentation with Yiran Jiang.
 - Jiang, Yiran: Collecting data. Improving and Running facenet CNN model for extracting features. Improving algorithm for cropping images. Dash code and functions design. Dash Interactive and Logic design. Presentation.
 - Liu, Fangbing: Designed python dash page, helped with processing data and organizing code.
-- Wang, Jingyi:  I designed camera connection and photo similarity, updated finding 4 similar celebrity face section, help designed python dash page and processed data.
+- Wang, Jingyi:  Designed camera connection and majority part of the finding similar celebrity photo section;  helped with python dash layout and part of the image feature extracture process.
 
 Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
 
