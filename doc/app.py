@@ -238,14 +238,14 @@ def get_menu():
                      
                      dcc.Link('Similarity', href='/Similarity', className="tab first",
                               style = {'background-color': '#FFFFFF','font-size':'20px','color': colors['text'],
-                                       'padding': '12px 25px','width':'30%','text-align': 'center',
+                                       'padding': '12px 25px','width':'28%','text-align': 'center',
                                        'text-decoration':'none','display': 'inline-block','borderWidth': '1px',
                                        'borderStyle': 'solid','borderRadius':'5px','textAlign':'center',
                                        'border-color': '#B8B8B8'}),
                      
                      dcc.Link('Attributes', href='/Attributes', className="tab",
                               style = {'background-color': '#FFFFFF','font-size':'20px','color': colors['text'],
-                                       'padding': '12px 25px','width':'31%','text-align': 'center',
+                                       'padding': '12px 25px','width':'28%','text-align': 'center',
                                        'text-decoration':'none','display': 'inline-block','borderWidth': '1px',
                                        'borderStyle': 'solid','borderRadius':'5px','textAlign':'center',
                                        'border-color': '#B8B8B8'}),
