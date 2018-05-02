@@ -49,7 +49,7 @@ Three ways of importing of the test image. We manage to upload one's photo throu
 
 - Guo, Du: Using models trained by Tao Guo to make predictions. Constructed Attributes dash page to show the results of our predictions, and combined codes of other members. 
 - Guo, Tao: Training part of the image for feature extracture. Building and training the Logistic Model for gender, attractiveness and face shape. Summary and Presentation with Yiran Jiang.
-- Jiang, Yiran: Collecting data. Improving and Running facenet CNN model for extracting features. Improving algorithm for cropping images. Dash code and functions design. Dash Interactive and Logic design. Presentation.
+- Jiang, Yiran: Leader of the project. Collecting data. Improving and Running facenet CNN model for extracting features. Designing algorithm for cropping images. Running and evaluating SVM model on sex classification. Dash code and functions design. Dash Interactive and Logic design. Presentation.
 - Liu, Fangbing: Designed python dash page, helped with processing data and organizing code.
 - Wang, Jingyi:  Designed camera connection and majority part of the finding similar celebrity photo section;  helped with python dash layout and part of the image feature extracture process.
 
